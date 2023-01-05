@@ -1,0 +1,87 @@
+The following modules have a new version:
+ - epiphany (3.38.5 => 3.38.6)
+ - gnome-shell (3.38.5 => 3.38.6)
+ - gsound (1.0.2 => 1.0.3) (*)
+ - json-glib (1.6.2 => 1.6.4)
+ - mutter (3.38.5 => 3.38.6)
+(*) No summarized news available
+
+The following modules weren't upgraded in this release:
+   adwaita-icon-theme, at-spi2-atk, at-spi2-core, atk, atkmm, baobab,
+   cantarell-fonts, cheese, clutter, clutter-gst, clutter-gtk, cogl, dconf,
+   dconf-editor, devhelp, eog, evince, evolution-data-server, file-roller,
+   folks, gcab, gcr, gdk-pixbuf, gdm, gedit, geocode-glib, gfbgraph, gjs,
+   glib, glib-networking, glibmm, gmime, gnome-autoar, gnome-backgrounds,
+   gnome-bluetooth, gnome-boxes, gnome-builder, gnome-calculator,
+   gnome-calendar, gnome-characters, gnome-clocks, gnome-color-manager,
+   gnome-contacts, gnome-control-center, gnome-desktop, gnome-disk-utility,
+   gnome-font-viewer, gnome-getting-started-docs, gnome-initial-setup,
+   gnome-keyring, gnome-logs, gnome-maps, gnome-menus, gnome-music,
+   gnome-online-accounts, gnome-online-miners, gnome-photos,
+   gnome-remote-desktop, gnome-screenshot, gnome-session,
+   gnome-settings-daemon, gnome-shell-extensions, gnome-software,
+   gnome-system-monitor, gnome-terminal, gnome-tour, gnome-user-docs,
+   gnome-user-share, gnome-video-effects, gnome-weather,
+   gobject-introspection, gom, grilo, grilo-plugins,
+   gsettings-desktop-schemas, gspell, gssdp, gtk, gtk+, gtk-doc, gtk-vnc,
+   gtkmm, gtksourceview, gupnp, gupnp-av, gupnp-dlna, gvfs, libchamplain,
+   libdazzle, libgdata, libgee, libgnomekbd, libgsf, libgtop, libgweather,
+   libgxps, libhandy, libmediaart, libnma, libnotify, libpeas, librsvg,
+   libsecret, libsigc++, libsoup, mm-common, nautilus, orca, pango, pangomm,
+   phodav, pyatspi, pygobject, rest, rygel, simple-scan, sushi, sysprof, tepl,
+   totem, totem-pl-parser, tracker, tracker-miners, vala, vte, yelp,
+   yelp-tools, yelp-xsl, zenity
+
+========================================
+  epiphany
+========================================
+
+3.38.6 - August 12, 2021
+========================
+
+ * Fix UI process CPU usage issue (#1560)
+
+
+========================================
+  gnome-shell
+========================================
+
+3.38.6
+======
+* Fix IM popup visibility when in fullscreen [Florian; !1900]
+* magnifier: Fix view jumps when using caret tracking [Lee; !1823]
+* Fixed crash [Florian; !1885]
+* Misc. bug fixes and cleanups [Florian, Carlos, Robert; !1891, !1902,
+  !1901, !1786, !1909]
+
+Contributors:
+  Carlos Garnacho, Lee, Robert Mader, Florian Müllner
+
+Translators:
+  Hugo Carvalho [pt]
+
+
+========================================
+  json-glib
+========================================
+
+• Discover linker flags on all toolchains
+• #58 - Fix memory leak [Richard Hughes]
+• Use gi-docgen instead of gtk-doc for generating the API reference
+• Build against newer versions of GLib
+
+========================================
+  mutter
+========================================
+
+3.38.6
+======
+* Misc. bug fixes [James; !1907]
+
+Contributors:
+  James Dominic P. Guana
+
+Translators:
+  Alexey Rubtsov [ru]
+
+

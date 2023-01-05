@@ -1,0 +1,13 @@
+Binary files nautilus-3.38.2.orig/src/.nautilus-enum-types.c.template.un~ and nautilus-3.38.2/src/.nautilus-enum-types.c.template.un~ differ
+diff -uNr nautilus-3.38.2.orig/src/nautilus-enum-types.c.template nautilus-3.38.2/src/nautilus-enum-types.c.template
+--- nautilus-3.38.2.orig/src/nautilus-enum-types.c.template	2020-11-20 11:04:26.820528000 -0300
++++ nautilus-3.38.2/src/nautilus-enum-types.c.template	2022-06-08 14:26:18.564712752 -0300
+@@ -13,7 +13,7 @@
+ GType
+ @enum_name@_get_type (void)
+ {
+-    static volatile GType type_once = 0;
++    static GType type_once = 0;
+ 
+     if (g_once_init_enter (&type_once))
+     {

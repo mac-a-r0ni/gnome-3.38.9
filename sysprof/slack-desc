@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+       |-----handy-ruler------------------------------------------------------|
+sysprof: sysprof (system profiler)
+sysprof:
+sysprof: is a system-wide statistical profiler for Linux. You can use Sysprof
+sysprof: to measure how much time is spent in each function of your
+sysprof: application, down to the system calls into the Linux kernel.
+sysprof:
+sysprof:
+sysprof: More Information:
+sysprof: https://developer.gnome.org/documentation/tools/sysprof.html
+sysprof:
+sysprof:
