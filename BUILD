@@ -94,7 +94,6 @@ nautilus 3.38.2 (with patch from dropline)
 gnome-menus 3.36.0
 gnome-shell-extensions 3.38.2
 
-***********
 # Chrome GNOME Shell browser integration and deps:
 jq 1.6
 p7zip 17.04
@@ -113,7 +112,7 @@ lxml (skipped)
 yelp-xsl 3.38.3
 yelp-tools 3.38.0
 yelp 3.38.3
-
+****
 # GNOME Terminal Emulator:
 gnome-terminal 3.38.3
 
