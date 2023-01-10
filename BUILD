@@ -38,7 +38,7 @@ cheese 3.38.0 fails built 41.1
 colord-gtk 0.3.0
 gnome-bluetooth 3.34.5
 gsound 1.0.3
-libhandy 1.8.0
+libhandy 1.8.0 go back to 1.0.3 on 15.0?
 xdg-dbus-proxy 0.1.4
 libwpe 1.14.0
 wpebackend-fdo 1.14.0
@@ -46,6 +46,7 @@ bubblewrap 0.7.0
 webkit2gtk 2.38.2
 rest 0.8.1
 gnome-online-accounts 3.38.2
+gnome-online-miners 3.34.0
 totem-pl-parser 3.26.6
 grilo 0.3.13
 cups-pk-helper 0.2.7
@@ -62,8 +63,8 @@ gnome-shell 3.38.6
 gnome-session 3.38.0 patched for elogind
 
 # GNOME Display Manager:
-blocaled 0.4
-#gdm 3.38.2 patched for elogind from gentoo
+blocaled 0.4 (dep libdaemon)
+#gdm 3.38.2 patched for elogind from gentoo  *need to replace with bobs 15.0 script*
 gdm 42 from sbo
 
 # random items
@@ -72,7 +73,7 @@ gnome-tour 3.38.0
 gnome-tweaks 3.34.1
 
 # GNOME Shell Extensions and deps:
-libportal 0.6
+libportal 0.6 (or 0.4?)
 libstemmer v20140708
 tracker 2.3.6
 gssdp 1.2.3
@@ -80,21 +81,20 @@ gupnp 1.2.7
 libgxps 0.3.2
 libosinfo 1.10.0
 gupnp-dlna 0.10.5
-# tracker-miners enables thumbnails in GNOME Files (nautilus):
+tracker-miners 2.3.5 (enables thumbnails in nautilus)
 exempi 2.6.2
 libiptcdata 1.0.4
 osinfo-db-tools 1.10.0
 osinfo-db 1.10.0
 libosinfo 1.10.0
 totem-pl-parser 3.26.6
-tracker 2.3.6
-tracker-miners 2.3.5
-tracker3 3.4.2
-tracker3-miners 3.3.1
+tracker3 3.0.4
+tracker3-miners 3.0.5
 nautilus 3.38.2 (with patch from dropline)
 gnome-menus 3.36.0
 gnome-shell-extensions 3.38.2
 
+***********
 # Chrome GNOME Shell browser integration and deps:
 jq 1.6
 p7zip 17.04
