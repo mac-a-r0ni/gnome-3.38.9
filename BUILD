@@ -1,4 +1,4 @@
-# gnome-all.sqf
+# BUILD - GNOME 3.38.9 - Slackware 15.0
 #
 # This is the 'gnome-all' build. It pulls in all the gnome packages from slackbuilds.org,
 # and builds them in appropriate order, enabling as many features as possible.
@@ -7,7 +7,8 @@
 # Note that some builds have shared deps. This list has cropped duplicates, leaving only
 # the first occurance, so all deps are met without rebuilding any packages.
 #
-# Good Luck! - Bob Funk
+# Good Luck! - Bob Funk (orignally wrote this file)
+# Changed/modified for 3.38 series and additional apps Jay Lanagan
 
 # GNOME Settings Daemon and deps:
 libgusb 0.4.2
@@ -108,7 +109,7 @@ gnome-shell-extension-appindicator 46.0
 gnome-backgrounds 3.38.0
 
 # Yelp:
-lxml (skipped)
+python-lxml 4.9.1
 yelp-xsl 3.38.3
 yelp-tools 3.38.0
 yelp 3.38.3

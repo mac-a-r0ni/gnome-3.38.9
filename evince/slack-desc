@@ -6,13 +6,13 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
         |-----handy-ruler------------------------------------------------------|
-evince: Evince
+evince: Evince (Document viewer)
 evince:
 evince: Evince is a document viewer for multiple document formats. The goal
 evince: of evince is to replace the multiple document viewers that exist on
 evince: the GNOME Desktop with a single simple application.
 evince:
+evince: Homepage: https://wiki.gnome.org/Apps/Evince
 evince:
 evince:
-evince: https://wiki.gnome.org/Apps/Evince
 evince:

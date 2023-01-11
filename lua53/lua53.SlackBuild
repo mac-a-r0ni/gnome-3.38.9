@@ -24,6 +24,8 @@
 
 # Some of the codes were taken from development/lua/lua.SlackBuild
 
+wget -c https://www.lua.org/ftp/lua-5.3.6.tar.gz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=lua53
