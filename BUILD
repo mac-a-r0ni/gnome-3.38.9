@@ -205,7 +205,7 @@ sysprof 3.38.1
 # Epiphany
 epiphany 3.38.6
 
-# Flatpak
+# Flatpak Support
 appstream
 appstream-glib
 libostree
@@ -214,3 +214,4 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-gnome
 xdg-user-dirs-gtk
 flatpak
+gnome-software
