@@ -34,6 +34,10 @@ clutter 1.26.4
 clutter-gtk 1.8.4
 clutter-gst 3.0.27
 gnome-video-effects 0.5.0
+libpeas
+exempi
+libportal
+eog
 cheese 3.38.0 fails built 41.1
 
 # GNOME Control Center and deps:
