@@ -141,7 +141,7 @@ gtksourceview4 4.8.4
 gnome-calculator 3.38.2
 
 # gedit is an editor for GNOME:
-libpeas 1.34 (optional gi-docgen, python-typogrify [for docs])
+libpeas 1.28 (optional gi-docgen, python-typogrify [for docs])
 amtk 5.6.1
 tepl 5.1.1
 gspell 1.8.4

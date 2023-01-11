@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Slackware build script for libhandy
+# Slackware build script for libhandy0
+# Adapted from libhandy
 
 # Written by B. Watson (urchlay@slackware.uk)
 

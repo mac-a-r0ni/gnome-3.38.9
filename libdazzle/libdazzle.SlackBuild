@@ -22,10 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://download.gnome.org/core/3.38/3.38.9/sources/libdazzle-3.38.0.tar.xz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=libdazzle
-VERSION=${VERSION:-3.44.0}
+VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}

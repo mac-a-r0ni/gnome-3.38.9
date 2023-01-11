@@ -22,8 +22,10 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://download.gnome.org/core/3.38/3.38.9/sources/tepl-5.1.1.tar.xz
+
 PRGNAM=tepl
-VERSION=${VERSION:-5.1.1}
+VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 
@@ -79,7 +81,7 @@ cd build
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
-meson .. \
+meson setup .. \
  --prefix=/usr \
  --buildtype=release \
  --libdir=lib${LIBDIRSUFFIX} \
@@ -89,7 +91,7 @@ meson .. \
  --mandir=/usr/man \
  --localstatedir=/var \
  -Ddefault_library=shared \
- -Dgtk_doc=true
+ -Dgtk_doc=false
 
 ninja $JOBS || ninja
 DESTDIR=$PKG ninja install
@@ -99,25 +101,12 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 
 cd ..
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a HACKING LICENSES NEWS README* \
+cp -a AUTHORS HACKING NEWS README* \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$(basename $0) > $PKG/usr/doc/$PRGNAM-$VERSION/$(basename $0)
 
 mkdir -p $PKG/install
-#      |-----handy-ruler------------------------------------------------------|
-cat <<EOT >$PKG/install/slack-desc
-$PRGNAM:
-$PRGNAM: Tepl
-$PRGNAM:
-$PRGNAM: Tepl is the acronym for “Text editor product line”.
-$PRGNAM: Tepl is a library that eases the development of GtkSourceView-based
-$PRGNAM: text editors and IDEs.
-$PRGNAM:
-$PRGNAM:
-$PRGNAM:
-$PRGNAM: https://github.com/gedit-org/tepl
-$PRGNAM:
-EOT
+cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
