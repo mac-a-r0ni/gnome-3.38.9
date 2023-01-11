@@ -186,3 +186,8 @@ gnome-screenshot 3.38.0
 # sushi
 libmusicbrainz5 5.1.0
 sushi 3.38.1
+
+# Epiphany
+valgrind
+libzapojit
+epiphany
