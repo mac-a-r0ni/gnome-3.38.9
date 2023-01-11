@@ -85,6 +85,7 @@ gupnp-av 0.12.11
 gupnp-dlna 0.10.5
 libgxps 0.3.2
 libosinfo 1.10.0
+libgrss
 tracker-miners 2.3.5 (enables thumbnails in nautilus)
 exempi 2.6.2
 libiptcdata 1.0.4
