@@ -27,6 +27,8 @@
 
 # Special thanks to Brandon Pribula, who kindly handed over maintenance to me.
 
+wget -c https://download.gnome.org/core/3.38/3.38.9/sources/gedit-3.38.2.tar.xz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=gedit
@@ -81,16 +83,6 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# gspell is an optional (autodetected) dependency. Give the user the possibility of
-# disabling it if preinstalled.
-spell='disabled'
-if [ -f /usr/lib${LIBDIRSUFFIX}/libgspell-1.so ] && [ "${WITH_GSPELL:-yes}" != "no" ]; then
-  spell='enabled'
-fi;
-
-# Allow the user to disable user documentation inclusion
-[ "${WITH_USER_DOCS:-yes}" != "no" ] && WITH_USER_DOCS="true" || WITH_USER_DOCS="false"
-
 mkdir build
 cd build
   CFLAGS="$SLKCFLAGS" \
@@ -103,8 +95,8 @@ cd build
     --mandir=/usr/man \
     --prefix=/usr \
     --sysconfdir=/etc \
-    -Dspell=$spell \
-    -Duser_documentation=${WITH_USER_DOCS} \
+    -Dspell=yes \
+    -Duser_documentation=true \
     -Dstrip=true
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
