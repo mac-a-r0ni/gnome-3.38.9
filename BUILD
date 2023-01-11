@@ -44,7 +44,7 @@ cheese 41.1 (3.38 is broken)
 colord-gtk 0.3.0
 gnome-bluetooth 3.34.5
 gsound 1.0.3
-libhandy 1.8.0 go back to 1.0.3 on 15.0?
+libhandy 1.0.3
 xdg-dbus-proxy 0.1.4
 libwpe 1.14.0
 wpebackend-fdo 1.14.0
@@ -52,15 +52,13 @@ bubblewrap 0.7.0
 webkit2gtk 2.38.2
 rest 0.8.1
 gnome-online-accounts 3.38.2
-gnome-online-miners 3.34.0
 totem-pl-parser 3.26.6
 grilo 0.3.13
-cups-pk-helper 0.2.7
+cups-pk-helper 0.2.7 (enables printers)
 gnome-control-center 3.38.6
 
 # GNOME Shell and deps:
 libgdata 0.18.1
-libgweather 3.36.2
 evolution-data-server 3.38.4
 gnome-autoar 0.2.4
 gnome-shell 3.38.6
@@ -97,6 +95,8 @@ totem-pl-parser 3.26.6
 tracker3 3.0.4
 tracker3-miners 3.0.5
 nautilus 3.38.2 (with patch from dropline)
+grilo-plugins 3.0.13
+gnome-online-miners 3.34.0
 gnome-menus 3.36.0
 gnome-shell-extensions 3.38.2
 
