@@ -34,10 +34,10 @@ clutter 1.26.4
 clutter-gtk 1.8.4
 clutter-gst 3.0.27
 gnome-video-effects 0.5.0
-libpeas
-exempi
-libportal
-eog
+libpeas 1.28.0
+exempi 2.6.2
+libportal 0.4
+eog 3.38.3
 cheese 41.1 (3.38 is broken)
 
 # GNOME Control Center and deps:
@@ -68,20 +68,20 @@ gnome-session 3.38.0 patched for elogind
 
 # GNOME Display Manager:
 blocaled 0.4
-#gdm 3.38.2 patched for elogind from gentoo  *need to replace with bobs 15.0 script*
-gdm 42 from sbo
+gdm 43.0 with 0xBOBF script from SBo
 
 # random items
 gnome-tour 3.38.0
+
 # GNOME Tweaks:
 gnome-tweaks 3.34.1
 
 # GNOME Shell Extensions and deps:
-libportal 0.6 (or 0.4?)
 libstemmer v20140708
 tracker 2.3.6
 gssdp 1.2.3
 gupnp 1.2.7
+gupnp
 libgxps 0.3.2
 libosinfo 1.10.0
 gupnp-dlna 0.10.5
