@@ -38,7 +38,7 @@ libpeas
 exempi
 libportal
 eog
-cheese 3.38.0 fails built 41.1
+cheese 41.1 (3.38 is broken)
 
 # GNOME Control Center and deps:
 colord-gtk 0.3.0
