@@ -90,15 +90,21 @@ tracker-miners 2.3.5 (enables thumbnails in nautilus)
 libiptcdata 1.0.4
 osinfo-db-tools 1.10.0
 osinfo-db 1.10.0
-libosinfo 1.10.0
-totem-pl-parser 3.26.6
 tracker3 3.0.4
 tracker3-miners 3.0.5
 nautilus 3.38.2 (with patch from dropline)
-grilo-plugins 3.0.13
-gnome-online-miners 3.34.0
+totem 3.38.1
 gnome-menus 3.36.0
 gnome-shell-extensions 3.38.2
+
+#grilo-plugins
+gom 0.4
+libdmapsharing 3.9.10
+libmediaart 1.9.6
+liboauth 1.0.3
+lua53 5.3.6
+grilo-plugins 3.0.13
+
 
 # Chrome GNOME Shell browser integration and deps:
 jq 1.6
@@ -180,6 +186,7 @@ gnome-maps 3.38.6
 
 # GNOME Photos:
 gfbgraph 0.2.4
+gnome-online-miners 3.34.0
 gnome-photos 3.38.1
 
 # Seahorse GNOME Keyring manager:

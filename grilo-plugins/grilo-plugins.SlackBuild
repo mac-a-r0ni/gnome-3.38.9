@@ -112,7 +112,7 @@ meson setup .. \
  -Denable-shoutcast=yes \
  -Denable-thetvdb=yes \
  -Denable-tmdb=yes \
- -Denable-tracker=yes \
+ -Denable-tracker=no \
  -Denable-tracker3=yes \
  -Denable-youtube=yes \
  -Dhelp=yes
