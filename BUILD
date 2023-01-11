@@ -44,6 +44,7 @@ eog 3.38.3
 cheese 41.1 (3.38 is broken)
 
 # GNOME Control Center and deps:
+libgnomekbd 3.26.1
 colord-gtk 0.3.0
 gnome-bluetooth 3.34.5
 gsound 1.0.3
