@@ -203,6 +203,14 @@ sushi 3.38.1
 sysprof 3.38.1
 
 # Epiphany
-epiphany
+epiphany 3.38.6
 
 # Flatpak
+appstream
+appstream-glib
+libostree
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-gnome
+xdg-user-dirs-gtk
+flatpak
