@@ -26,6 +26,8 @@
 # - fix PRINT_PACKAGE_NAME (PKGTYPE wasn't set).
 # - remove useless ABOUT-NLS and INSTALL from doc dir.
 
+wget -c https://download.gnome.org/core/3.38/3.38.9/sources/gspell-1.8.4.tar.xz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=gspell
@@ -102,8 +104,6 @@ make install DESTDIR=$PKG
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
-
-find $PKG -name '*.la' -delete
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a AUTHORS COPYING ChangeLog HACKING NEWS README $PKG/usr/doc/$PRGNAM-$VERSION
