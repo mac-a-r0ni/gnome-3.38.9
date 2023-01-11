@@ -8,7 +8,10 @@
 # the first occurance, so all deps are met without rebuilding any packages.
 #
 # Good Luck! - Bob Funk (orignally wrote this file)
+#
 # Changed/modified for 3.38 series and additional apps Jay Lanagan
+# This file can be quite messy to look at, I will create one of those scripts all
+# the fancy kids use to install desktops with soon.
 
 # GNOME Settings Daemon and deps:
 libgusb 0.4.2
@@ -149,11 +152,10 @@ libhandy0 0.0.13 (not needed anymore, but 38 series uses this old version)
 gnome-calendar 3.38.2
 
 # GNOME Calculator:
-gtksourceview4 4.8.4
+gtksourceview4 4.8.1
 gnome-calculator 3.38.2
 
 # gedit is an editor for GNOME:
-libpeas 1.28 (optional gi-docgen, python-typogrify [for docs])
 amtk 5.6.1
 tepl 5.1.1
 gspell 1.8.4
@@ -163,10 +165,8 @@ gedit 3.38.2
 evince 3.38.3
 
 # Evolution email/calendar/organizer client:
-# gspell above for gedit on 38, not needed in 42 since gedit removed
 cmark 0.30.2
 libpst 0.6.76
-lua53 5.3.6
 highlight 4.4 cli only
 ytnef 2.0
 libchamplain 0.12.20
@@ -175,7 +175,6 @@ libmspack 0.10.1alpha
 evolution-ews 3.38.4
 
 # File-Roller archive manager:
-p7zip 17.04
 file-roller 3.38.1
 
 # GNOME Maps:
@@ -186,6 +185,7 @@ gnome-maps 3.38.6
 
 # GNOME Photos:
 gfbgraph 0.2.4
+libzapojit 0.0.3
 gnome-online-miners 3.34.0
 gnome-photos 3.38.1
 
@@ -199,8 +199,10 @@ gnome-screenshot 3.38.0
 libmusicbrainz5 5.1.0
 sushi 3.38.1
 
+# system profiler
+sysprof 3.38.1
+
 # Epiphany
-libzapojit
 epiphany
 
 # Flatpak
