@@ -12,6 +12,7 @@
 
 # GNOME Settings Daemon and deps:
 libgusb 0.4.2
+valgrind 3.20.0
 colord 1.4.6
 gnome-desktop 3.38.8
 geocode-glib 3.26.4
@@ -64,7 +65,7 @@ gnome-shell 3.38.6
 gnome-session 3.38.0 patched for elogind
 
 # GNOME Display Manager:
-blocaled 0.4 (dep libdaemon)
+blocaled 0.4
 #gdm 3.38.2 patched for elogind from gentoo  *need to replace with bobs 15.0 script*
 gdm 42 from sbo
 
@@ -188,6 +189,7 @@ libmusicbrainz5 5.1.0
 sushi 3.38.1
 
 # Epiphany
-valgrind
 libzapojit
 epiphany
+
+# Flatpak

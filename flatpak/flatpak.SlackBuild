@@ -120,7 +120,6 @@ mkdir -p $PKG/var/lib/flatpak
 # Add flathub definition.
 # The doinst.sh will actually install it as a flatpak remote repository:
 install -D -m 0644 -t $PKG/etc/flatpak/remotes.d $CWD/flathub.flatpakrepo
-install -D -m 0644 -t $PKG/etc/flatpak/remotes.d $CWD/gnome-nightly.flatpakrepo
 
 # We want flatpak enabled out of the box:
 chmod 0755 $PKG/etc/profile.d/flatpak.sh
@@ -160,12 +159,10 @@ preserve_perms() {
 
 preserve_perms etc/profile.d/flatpak.sh.new
 
-# Make the flathub/gnome-nightly repositories available systemwide:
+# Make the flathub repository available systemwide:
 chroot . \
   /usr/bin/flatpak remote-add --user --if-not-exists \
   flathub /etc/flatpak/remotes.d/flathub.flatpakrepo
-  /usr/bin/flatpak remote-add --user --if-not-exists \
-  gnome-nightly /etc/flatpak/remotes.d/gnome-nightly.flatpakrepo
 EOINS
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
