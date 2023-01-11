@@ -27,7 +27,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 PRGNAM=osinfo-db-tools
 VERSION=${VERSION:-1.10.0}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_lngn}
+TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
 
 if [ -z "$ARCH" ]; then
@@ -46,7 +46,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/lngn}
+TMP=${TMP:-/tmp/gcs}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 

@@ -28,7 +28,7 @@ PRGNAM=osinfo-db
 VERSION=${VERSION:-20221018}
 SLVERSION=${SLVERSION:-20220214}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_lngn}
+TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
 
 ARCH=noarch
@@ -41,7 +41,7 @@ if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   exit 0
 fi
 
-TMP=${TMP:-/tmp/lngn}
+TMP=${TMP:-/tmp/gcs}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
