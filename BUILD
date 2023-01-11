@@ -112,7 +112,7 @@ lxml (skipped)
 yelp-xsl 3.38.3
 yelp-tools 3.38.0
 yelp 3.38.3
-****
+
 # GNOME Terminal Emulator:
 gnome-terminal 3.38.3
 
