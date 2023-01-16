@@ -27,8 +27,7 @@ wget -c https://download.gnome.org/sources/shotwell/0.30/shotwell-0.30.17.tar.xz
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=shotwell
-
-VERSION=${VERSION:-0.24.0}
+VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
