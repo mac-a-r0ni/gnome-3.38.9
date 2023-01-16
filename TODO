@@ -1,7 +1,7 @@
--2048
--aisleriot solitaire
--brasero (libisofs) - cd burning
--chess
+-2048 
+-aisleriot solitaire DONE
+-brasero (libisofs) - cd burning DONE
+-chess DONE
 five or more
 four in a row
 hitori
@@ -15,7 +15,7 @@ music
 nibbles
 quadrapas
 reversi
--rhythmbox
+-rhythmbox DONE
 robots
 shotwell
 sound recorder
@@ -25,5 +25,6 @@ tali
 taquin
 tetravex
 gnome todo
--transmission
+-transmission DONE
 
+python-dbus-python whats wrong with it?
