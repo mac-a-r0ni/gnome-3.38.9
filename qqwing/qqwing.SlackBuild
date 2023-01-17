@@ -90,8 +90,8 @@ find -L . \
 #  --localstatedir=/var \
 #  --mandir=/usr/man \
 #  --build=$ARCH-slackware-linux
-$SLKCFLAGS make all || exit 1
-$SLKCFLAGS make install DESTDIR=$PKG || exit 1
+CFLAGS="$SLKCFLAGS" make all || exit 1
+CFLAGS="$SLKCFLAGS" make install DESTDIR=$PKG || exit 1
 
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
