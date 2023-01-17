@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Slackware build script for gnome-music
+# Slackware build script for five-or-more
 
 # Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA
 # All rights reserved.
@@ -22,24 +22,29 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://download.gnome.org/core/3.38/3.38.9/sources/gnome-music-3.38.3.tar.xz
+wget -c https://download.gnome.org/sources/five-or-more/3.32/five-or-more-3.32.3.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=gnome-music
+PRGNAM=five-or-more
 VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
 
+# Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
+    # Unless $ARCH is already set, use uname -m for all other archs:
        *) ARCH=$( uname -m ) ;;
   esac
 fi
 
+# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
+# the name of the created package would be, and then exit. This information
+# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -93,6 +98,7 @@ cd build
     --mandir=/usr/man \
     --prefix=/usr \
     --sysconfdir=/etc
+
 "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
 cd ..
@@ -116,7 +122,7 @@ if [ -d $PKG/usr/man ]; then
 fi
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a LICENSE NEWS README.md \
+cp -a COPYING NEWS \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
