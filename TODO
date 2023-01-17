@@ -24,7 +24,7 @@ swell foop
 tali
 taquin
 tetravex
-gnome todo
+gnome todo REQ older evolution-data-server for libecal-1.2.so ... maybe trick the installer by making symlink?
 -transmission DONE
 
 python-dbus-python whats wrong with it?
