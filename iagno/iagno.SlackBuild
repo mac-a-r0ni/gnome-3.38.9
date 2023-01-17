@@ -79,6 +79,9 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
 cd $PRGNAM-$VERSION
+cat $CWD/0001-Reference-of-GtkChild-fields-is-handled-by-GtkBuilde.patch | patch -p1
+cat $CWD/0001-Don-t-alter-or-try-to-write-GtkChild-fields.patch | patch -p1
+
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
