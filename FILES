@@ -1,9 +1,9 @@
 FILES
-adwaita-icon-theme-3.38.0.tar.xz			SLACK
-at-spi2-atk-2.38.0.tar.xz				SLACK
-at-spi2-core-2.38.0.tar.xz				SLACK
-atk-2.36.0.tar.xz					SLACK
-atkmm-2.28.2.tar.xz					SLACK
+adwaita-icon-theme-3.38.0.tar.xz			SLACK 40.1.1
+at-spi2-atk-2.38.0.tar.xz				SLACK 2.38.0
+at-spi2-core-2.38.0.tar.xz				SLACK 2.42.0
+atk-2.36.0.tar.xz					SLACK 2.36.0
+atkmm-2.28.2.tar.xz					SLACK 2.28.2
 baobab-3.38.0.tar.xz				VERSION
 cantarell-fonts-0.201.tar.xz						COMMON
 cheese-3.38.0.tar.xz			BROKEN
@@ -11,8 +11,8 @@ clutter-1.26.4.tar.xz							COMMON
 clutter-gst-3.0.27.tar.xz						COMMON
 clutter-gtk-1.8.4.tar.xz						COMMON
 cogl-1.22.8.tar.xz							COMMON
-dconf-0.38.0.tar.xz					SLACK
-dconf-editor-3.38.3.tar.xz				SLACK
+dconf-0.38.0.tar.xz					SLACK 0.40.0
+dconf-editor-3.38.3.tar.xz				SLACK 3.38.3
 devhelp-3.38.1.tar.xz				VERSION
 eog-3.38.3.tar.xz				VERSION
 epiphany-3.38.6.tar.xz				VERSION
@@ -22,16 +22,16 @@ file-roller-3.38.1.tar.xz			VERSION
 folks-0.14.0.tar.xz							COMMON
 gcab-1.4.tar.xz								COMMON
 gcr-3.38.1.tar.xz				VERSION
-gdk-pixbuf-2.40.0.tar.xz				SLACK
+gdk-pixbuf-2.40.0.tar.xz				SLACK 2.42.6
 gdm-3.38.2.1.tar.xz				VERSION
 gedit-3.38.2.tar.xz				VERSION
 geocode-glib-3.26.2.tar.xz						COMMON
 gfbgraph-0.2.4.tar.xz							COMMON
-gjs-1.66.2.tar.xz					SLACK
-glib-2.66.8.tar.xz					SLACK
-glib-networking-2.66.0.tar.xz				SLACK
-glibmm-2.64.5.tar.xz					SLACK
-gmime-3.2.7.tar.xz					SLACK
+gjs-1.66.2.tar.xz					SLACK 1.70.0
+glib-2.66.8.tar.xz					SLACK 2.70.3
+glib-networking-2.66.0.tar.xz				SLACK 2.70.1
+glibmm-2.64.5.tar.xz					SLACK 2.64.5
+gmime-3.2.7.tar.xz					SLACK 3.2.7
 gnome-autoar-0.2.4.tar.xz						COMMON
 gnome-backgrounds-3.38.0.tar.xz			VERSION
 gnome-bluetooth-3.34.5.tar.xz						COMMON
@@ -49,7 +49,7 @@ gnome-disk-utility-3.38.2.tar.xz		VERSION
 gnome-font-viewer-3.34.0.tar.xz			VERSION
 gnome-getting-started-docs-3.38.1.tar.xz	VERSION
 gnome-initial-setup-3.38.5.tar.xz		VERSION
-gnome-keyring-3.36.0.tar.xz				SLACK
+gnome-keyring-3.36.0.tar.xz				SLACK 40.0
 gnome-logs-3.36.0.tar.xz														NO
 gnome-maps-3.38.6.tar.xz			VERSION
 gnome-menus-3.36.0.tar.xz						COMMON
@@ -71,67 +71,67 @@ gnome-user-docs-3.38.8.tar.xz			VERSION
 gnome-user-share-3.34.0.tar.xz			VERSION
 gnome-video-effects-0.5.0.tar.xz					COMMON
 gnome-weather-3.36.1.tar.xz			VERSION
-gobject-introspection-1.66.1.tar.xz			SLACK
+gobject-introspection-1.66.1.tar.xz			SLACK 1.70.0
 gom-0.4.tar.xz								COMMON
 grilo-0.3.13.tar.xz							COMMON
 grilo-plugins-0.3.13.tar.xz						COMMON
-gsettings-desktop-schemas-3.38.0.tar.xz		VERSION
+gsettings-desktop-schemas-3.38.0.tar.xz			SLACK 40.0
 gsound-1.0.3.tar.xz							COMMON
 gspell-1.8.4.tar.xz							COMMON
-gssdp-1.2.3.tar.xz
-gtk+-3.24.30.tar.xz
-gtk-4.2.1.tar.xz
-gtk-doc-1.33.2.tar.xz
-gtk-vnc-1.0.0.tar.xz
-gtkmm-3.24.5.tar.xz
-gtksourceview-4.8.1.tar.xz
-gupnp-1.2.7.tar.xz
-gupnp-av-0.12.11.tar.xz
-gupnp-dlna-0.10.5.tar.xz
-gvfs-1.46.2.tar.xz
-json-glib-1.6.4.tar.xz
-libchamplain-0.12.20.tar.xz
-libdazzle-3.38.0.tar.xz
-libgdata-0.18.1.tar.xz
-libgee-0.20.4.tar.xz
-libgnomekbd-3.26.1.tar.xz
-libgsf-1.14.47.tar.xz
-libgtop-2.40.0.tar.xz
-libgweather-3.36.2.tar.xz
-libgxps-0.3.2.tar.xz
-libhandy-1.0.3.tar.xz
-libmediaart-1.9.5.tar.xz
-libnma-1.8.30.tar.xz
-libnotify-0.7.9.tar.xz
-libpeas-1.28.0.tar.xz
-librsvg-2.50.7.tar.xz
-libsecret-0.20.4.tar.xz
-libsigc++-2.10.7.tar.xz
-libsoup-2.72.0.tar.xz
-mm-common-1.0.3.tar.xz
-mutter-3.38.6.tar.xz
-nautilus-3.38.2.tar.xz
-orca-3.38.2.tar.xz
-pango-1.46.2.tar.xz
-pangomm-2.42.2.tar.xz
-phodav-2.5.tar.xz
-pyatspi-2.38.1.tar.xz
-pygobject-3.38.0.tar.xz
-rest-0.8.1.tar.xz
-rygel-0.40.1.tar.xz
-simple-scan-3.38.5.tar.xz
-sushi-3.38.1.tar.xz
-sysprof-3.38.1.tar.xz
-tepl-5.1.1.tar.xz
-totem-3.38.1.tar.xz
-totem-pl-parser-3.26.6.tar.xz
-tracker-2.3.6.tar.xz
-tracker-3.0.4.tar.xz
-tracker-miners-2.3.5.tar.xz
-tracker-miners-3.0.5.tar.xz
-vala-0.50.9.tar.xz
-vte-0.62.3.tar.xz
-yelp-3.38.3.tar.xz
-yelp-tools-3.38.0.tar.xz
-yelp-xsl-3.38.3.tar.xz
-zenity-3.32.0.tar.xz
+gssdp-1.2.3.tar.xz							COMMON
+gtk+-3.24.30.tar.xz					SLACK 3.24.31
+gtk-4.2.1.tar.xz					SLACK 4.4.1
+gtk-doc-1.33.2.tar.xz							COMMON
+gtk-vnc-1.0.0.tar.xz							COMMON
+gtkmm-3.24.5.tar.xz							COMMON
+gtksourceview-4.8.1.tar.xz						COMMON
+gupnp-1.2.7.tar.xz							COMMON
+gupnp-av-0.12.11.tar.xz							COMMON
+gupnp-dlna-0.10.5.tar.xz						COMMON
+gvfs-1.46.2.tar.xz					SLACK 1.48.1
+json-glib-1.6.4.tar.xz					SLACK 1.6.6
+libchamplain-0.12.20.tar.xz						COMMON
+libdazzle-3.38.0.tar.xz							COMMON
+libgdata-0.18.1.tar.xz							COMMON
+libgee-0.20.4.tar.xz					SLACK 0.20.4
+libgnomekbd-3.26.1.tar.xz						COMMON
+libgsf-1.14.47.tar.xz					SLACK 1.14.50
+libgtop-2.40.0.tar.xz					SLACK 2.40
+libgweather-3.36.2.tar.xz						COMMON
+libgxps-0.3.2.tar.xz							COMMON
+libhandy-1.0.3.tar.xz							COMMON
+libmediaart-1.9.5.tar.xz						COMMON
+libnma-1.8.30.tar.xz					SLACK 1.10.6
+libnotify-0.7.9.tar.xz					SLACK 1.8.1
+libpeas-1.28.0.tar.xz							COMMON
+librsvg-2.50.7.tar.xz					SLACK 2.54.5
+libsecret-0.20.4.tar.xz					SLACK 0.20.5
+libsigc++-2.10.7.tar.xz					SLACK 2.10.8
+libsoup-2.72.0.tar.xz					SLACK 2.74.3
+mm-common-1.0.3.tar.xz							COMMON
+mutter-3.38.6.tar.xz				VERSION
+nautilus-3.38.2.tar.xz				VERSION
+orca-3.38.2.tar.xz				VERSION
+pango-1.46.2.tar.xz					SLACK 1.48.11
+pangomm-2.42.2.tar.xz					SLACK 2.42.2
+phodav-2.5.tar.xz				VERSION
+pyatspi-2.38.1.tar.xz							COMMON
+pygobject-3.38.0.tar.xz					SLACK 3.42.0
+rest-0.8.1.tar.xz							COMMON
+rygel-0.40.1.tar.xz							COMMON
+simple-scan-3.38.5.tar.xz			VERSION
+sushi-3.38.1.tar.xz				VERSION
+sysprof-3.38.1.tar.xz				VERSION
+tepl-5.1.1.tar.xz							COMMON
+totem-3.38.1.tar.xz				VERSION
+totem-pl-parser-3.26.6.tar.xz						COMMON
+tracker-2.3.6.tar.xz							COMMON
+tracker-3.0.4.tar.xz				VERSION
+tracker-miners-2.3.5.tar.xz						COMMON
+tracker-miners-3.0.5.tar.xz			VERSION
+vala-0.50.9.tar.xz					SLACK 0.54.6
+vte-0.62.3.tar.xz					SLACK 0.66.2
+yelp-3.38.3.tar.xz				VERSION
+yelp-tools-3.38.0.tar.xz			VERSION
+yelp-xsl-3.38.3.tar.xz				VERSION
+zenity-3.32.0.tar.xz				VERSION
