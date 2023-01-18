@@ -29,8 +29,10 @@ gnome todo REQ older evolution-data-server for libecal-1.2.so ... maybe trick th
 
 python-dbus-python whats wrong with it?
 
-GNOME Flashback session
-gnome-applets
-gnome-flashback
-gnome-panel
-metacity
+GNOME Flashback Session
+-----------------------
+gnome-applets DONE
+gnome-flashback DONE
+gnome-panel DONE
+gnome-power-manager DONE
+metacity DONE
