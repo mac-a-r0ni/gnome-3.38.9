@@ -84,6 +84,8 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+sed -i "s/libsystemd/libelogind/" configure
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -92,8 +94,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --sysconfdir=/etc \
   --localstatedir=/var \
   --mandir=/usr/man \
-  --build=$ARCH-slackware-linux \
-  --enable-elogind-session
+  --build=$ARCH-slackware-linux
 
 make || exit 1
 make install DESTDIR=$PKG || exit 1
