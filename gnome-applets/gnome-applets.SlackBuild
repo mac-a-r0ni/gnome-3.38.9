@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Slackware build script for gnome-flashback
+# Slackware build script for gnome-applets
 
 # Copyright 2022 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
@@ -22,11 +22,11 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://download.gnome.org/sources/gnome-flashback/3.38/gnome-flashback-3.38.0.tar.xz
+wget -c https://download.gnome.org/sources/gnome-applets/3.38/gnome-applets-3.38.0.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=gnome-flashback
+PRGNAM=gnome-applets
 VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
@@ -86,8 +86,6 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-sed -i "s/libsystemd/libelogind/" configure
-
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -99,7 +97,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --disable-maintainer-mode \
   --build=$ARCH-slackware-linux
 
-make || exit 1
+make $NUMJOBS || make || exit 1
 make install DESTDIR=$PKG || exit 1
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
@@ -122,11 +120,8 @@ if [ -d $PKG/usr/man ]; then
   )
 fi
 
-mkdir -p $PKG/etc/X11/xinit
-cp $CWD/xinitrc.gnome-flashback $PKG/etc/X11/xinit
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a COPYING INSTALL NEWS \
+cp -a AUTHORS COPYING* INSTALL NEWS README  \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
