@@ -119,6 +119,9 @@ if [ -d $PKG/usr/man ]; then
   )
 fi
 
+mkdir -p $PKG/etc/X11/xinit
+cp $CWD/xinitrc.gnome-flashback $PKG/etc/X11/xinit
+
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a COPYING INSTALL NEWS \
   $PKG/usr/doc/$PRGNAM-$VERSION

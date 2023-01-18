@@ -98,6 +98,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --sysconfdir=/etc \
   --localstatedir=/var \
   --mandir=/usr/man \
+  --disable-maintainer-mode \
   --build=$ARCH-slackware-linux
 
 make $NUMJOBS || make || exit 1
