@@ -8,11 +8,11 @@
            |-----handy-ruler------------------------------------------------------|
 gnome-panel: gnome-panel (Panel for GNOME Flashback)
 gnome-panel:
-gnome-panel: The classic GNOME Panel.
 gnome-panel:
+gnome-panel: GNOME Flashback continues the traditional desktop interface which was
+gnome-panel: used in GNOME 2.x, but using modern GNOME technologies.
 gnome-panel:
 gnome-panel: Homepage: https://wiki.gnome.org/Projects/GnomePanel
-gnome-panel:
 gnome-panel:
 gnome-panel:
 gnome-panel:
