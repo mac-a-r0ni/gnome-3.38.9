@@ -94,6 +94,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --sysconfdir=/etc \
   --localstatedir=/var \
   --mandir=/usr/man \
+  --disable-maintainer-mode \
   --build=$ARCH-slackware-linux
 
 make || exit 1
