@@ -1,0 +1,21 @@
+From: Jeremy Bicha <jbicha@debian.org>
+Date: Sat, 5 Feb 2011 13:52:15 +0000
+Subject: Show GNOME Documents in menus everywhere
+
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/gnome-documents/+bug/1687101
+---
+ data/org.gnome.Documents.desktop.in | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/data/org.gnome.Documents.desktop.in b/data/org.gnome.Documents.desktop.in
+index 1d2bd9f..cc4b78b 100644
+--- a/data/org.gnome.Documents.desktop.in
++++ b/data/org.gnome.Documents.desktop.in
+@@ -8,7 +8,6 @@ Terminal=false
+ Type=Application
+ StartupNotify=true
+ DBusActivatable=true
+-OnlyShowIn=GNOME;
+ Categories=GNOME;GTK;Utility;Core;
+ # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+ Keywords=Docs;PDF;Document;
