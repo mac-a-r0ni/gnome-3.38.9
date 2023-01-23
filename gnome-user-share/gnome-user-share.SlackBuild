@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Slackware build script for gnome-characters
+# Slackware build script for gnome-user-share
 
-# Copyright 2021 Rafael Tavares (mdrafaeltavares@gmail.com) Bahia, Brazil.
-# Modified by Ioannis Anagnostakis <rizitis@gmail.com> GR (2022)
+# Copyright 2023 Jay Lanagan (j@lngn.net), Detroit, MI, USA.
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -23,11 +22,11 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://download.gnome.org/core/3.38/3.38.9/sources/gnome-characters-3.34.0.tar.xz
+wget -c https://download.gnome.org/core/3.38/3.38.9/sources/gnome-user-share-3.34.0.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PRGNAM=gnome-characters
+PRGNAM=gnome-user-share
 VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
@@ -76,6 +75,11 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
 cd $PRGNAM-$VERSION
+
+# patches from debian bullseye
+patch -Np1 -i $CWD/01_apache-config.patch || exit 1
+patch -Np1 -i $CWD/10_apache_2.4.patch || exit 1
+
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -96,7 +100,10 @@ cd meson-build
  --infodir=/usr/info \
  --mandir=/usr/man \
  --localstatedir=/var \
- -Ddefault_library=shared
+ -Ddefault_library=shared \
+ -Dhttpd=/usr/sbin/httpd \
+ -Dmodules_path=/usr/lib64/httpd/modules \
+ -Dsystemduserunitdir=/usr/lib/systemd/user
 
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
@@ -108,7 +115,7 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a  COPYING* NEWS README.md  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a  AUTHORS COPYING MAINTAINERS NEWS README  $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install

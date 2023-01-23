@@ -1,0 +1,14 @@
+Author: Emilio Pozuelo Monfort <pochu@debian.org>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=669729
+
+--- a/data/dav_user_2.4.conf
++++ b/data/dav_user_2.4.conf
+@@ -8,7 +8,7 @@
+ 
+ LimitXMLRequestBody 100000
+ 
+-LoadModule unixd_module ${HTTP_MODULES_PATH}/mod_unixd.so
++#LoadModule unixd_module ${HTTP_MODULES_PATH}/mod_unixd.so
+ LoadModule mpm_prefork_module ${HTTP_MODULES_PATH}/mod_mpm_prefork.so
+ LoadModule dav_module ${HTTP_MODULES_PATH}/mod_dav.so
+ LoadModule dav_fs_module ${HTTP_MODULES_PATH}/mod_dav_fs.so
