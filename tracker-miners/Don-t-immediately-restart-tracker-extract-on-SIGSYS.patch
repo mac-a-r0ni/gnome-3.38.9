@@ -1,0 +1,25 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Thu, 12 Jan 2017 12:42:38 +0000
+Subject: Don't immediately restart tracker-extract on SIGSYS
+
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=851148
+Forwarded: https://gitlab.gnome.org/GNOME/tracker-miners/-/merge_requests/274
+Applied-upstream: no
+---
+ src/tracker-extract/tracker-extract.service.in | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/tracker-extract/tracker-extract.service.in b/src/tracker-extract/tracker-extract.service.in
+index 33ab2e3..40fb52c 100644
+--- a/src/tracker-extract/tracker-extract.service.in
++++ b/src/tracker-extract/tracker-extract.service.in
+@@ -8,7 +8,8 @@ BusName=org.freedesktop.Tracker1.Miner.Extract
+ ExecStart=@libexecdir@/tracker-extract
+ Restart=on-abnormal
+ # Don't restart after tracker daemon -k (aka tracker-control -k)
+-RestartPreventExitStatus=SIGKILL
++# Don't restart after seccomp raises SIGSYS either
++RestartPreventExitStatus=SIGKILL SIGSYS
+ 
+ [Install]
+ WantedBy=default.target

@@ -1,0 +1,82 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Thu, 22 Aug 2019 16:48:06 +0200
+Subject: functional-tests: Check for IPCT image tags only if libiptcdata is
+ available
+
+test-image-1 was checking for the presency of image tags that are added only
+when libiptcdata is found.
+
+However the test case checks for them in all the cases, so split the image-1
+test in two extractor tests, where one is doing the standard checks and
+another one is only checking the tags provided by libiptcdata.
+
+Also move images/test-iptcdata-records check there
+
+Origin: https://gitlab.gnome.org/GNOME/tracker-miners/commit/a51e0406b
+Applied-Upstream: 2.9
+---
+ tests/functional-tests/meson.build                           |  8 +++++++-
+ .../images/test-image-1-iptc-tags.expected.json              | 12 ++++++++++++
+ .../test-extraction-data/images/test-image-1.expected.json   |  4 ----
+ 3 files changed, 19 insertions(+), 5 deletions(-)
+ create mode 100644 tests/functional-tests/test-extraction-data/images/test-image-1-iptc-tags.expected.json
+
+diff --git a/tests/functional-tests/meson.build b/tests/functional-tests/meson.build
+index 873f736..78c37fb 100644
+--- a/tests/functional-tests/meson.build
++++ b/tests/functional-tests/meson.build
+@@ -13,7 +13,6 @@ extractor_tests = [
+   'images/xmp-loaded-1',
+   'images/test-image-3',
+   'images/corrupted-image',
+-  'images/test-iptcdata-records',
+   'images/roi2',
+   'images/test-image-4',
+   'images/test-image-2',
+@@ -32,6 +31,13 @@ if get_option('unzip_ps_gz_files')
+   extractor_tests += 'office/psgz-doc'
+ endif
+ 
++if libiptcdata.found()
++  extractor_tests += [
++    'images/test-image-1-iptc-tags',
++    'images/test-iptcdata-records',
++  ]
++endif
++
+ functional_tests = [
+   '300-miner-basic-ops',
+   '301-miner-resource-removal',
+diff --git a/tests/functional-tests/test-extraction-data/images/test-image-1-iptc-tags.expected.json b/tests/functional-tests/test-extraction-data/images/test-image-1-iptc-tags.expected.json
+new file mode 100644
+index 0000000..37b8a65
+--- /dev/null
++++ b/tests/functional-tests/test-extraction-data/images/test-image-1-iptc-tags.expected.json
+@@ -0,0 +1,12 @@
++{
++    "test": {
++        "Filename": "test-image-1.jpg",
++        "Comment": "Basic jpeg example, ISO image tags checks"
++    },
++    "metadata": {
++        "nao:hasTag": [
++            { "nao:prefLabel": "test" },
++            { "nao:prefLabel": "tracker" }
++        ]
++    }
++}
+diff --git a/tests/functional-tests/test-extraction-data/images/test-image-1.expected.json b/tests/functional-tests/test-extraction-data/images/test-image-1.expected.json
+index 4b5043d..a13ee20 100644
+--- a/tests/functional-tests/test-extraction-data/images/test-image-1.expected.json
++++ b/tests/functional-tests/test-extraction-data/images/test-image-1.expected.json
+@@ -7,10 +7,6 @@
+         "@type": "nmm:Photo",
+         "nfo:width": "699",
+         "nfo:height": "464",
+-        "nao:hasTag": [
+-            { "nao:prefLabel": "test" },
+-            { "nao:prefLabel": "tracker" }
+-        ],
+         "nie:title": "Kid",
+         "nmm:fnumber": "5.0",
+         "nmm:focalLength": "5.0",

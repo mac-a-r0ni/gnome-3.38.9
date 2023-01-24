@@ -1,0 +1,52 @@
+From: Laurent Bigonville <bigon@debian.org>
+Date: Sat, 4 Apr 2020 18:47:43 +0200
+Subject: Don't start the daemon for the root user
+
+Now that the .service files are started by the default.target, the
+processes could also be started when a cronjob is starting, this is
+probably not wanted.
+
+In addition to that, running the extractor as root could lead to
+security issues. Let's do like pulseaudio and not start the daemons for
+the root user.
+
+Applied-upstream: 2.99.1, commit:ae07b49a86fc85c832ba51160e289c355533c8a9
+---
+ src/miners/fs/tracker-miner-fs.service.in      | 1 +
+ src/miners/rss/tracker-miner-rss.service.in    | 1 +
+ src/tracker-extract/tracker-extract.service.in | 1 +
+ 3 files changed, 3 insertions(+)
+
+diff --git a/src/miners/fs/tracker-miner-fs.service.in b/src/miners/fs/tracker-miner-fs.service.in
+index c6f56b1..3156431 100644
+--- a/src/miners/fs/tracker-miner-fs.service.in
++++ b/src/miners/fs/tracker-miner-fs.service.in
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Tracker file system data miner
++ConditionUser=!root
+ 
+ [Service]
+ Type=dbus
+diff --git a/src/miners/rss/tracker-miner-rss.service.in b/src/miners/rss/tracker-miner-rss.service.in
+index 2bebf4c..5dfd10a 100644
+--- a/src/miners/rss/tracker-miner-rss.service.in
++++ b/src/miners/rss/tracker-miner-rss.service.in
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Tracker RSS/ATOM feed data miner
++ConditionUser=!root
+ 
+ [Service]
+ Type=dbus
+diff --git a/src/tracker-extract/tracker-extract.service.in b/src/tracker-extract/tracker-extract.service.in
+index 8e1d59d..33ab2e3 100644
+--- a/src/tracker-extract/tracker-extract.service.in
++++ b/src/tracker-extract/tracker-extract.service.in
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Tracker metadata extractor
++ConditionUser=!root
+ 
+ [Service]
+ Type=dbus

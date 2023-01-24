@@ -99,7 +99,8 @@ meson setup .. \
  --buildtype=release \
  -Dman=true \
  -Dminer_rss=false \
- -Dsystemd_user_services=false
+ -Dsystemd_user_services=false \
+ -Dsystemd_user_services_dir=/usr/lib/systemd/user
 
 ninja $JOBS || ninja
 DESTDIR=$PKG ninja install

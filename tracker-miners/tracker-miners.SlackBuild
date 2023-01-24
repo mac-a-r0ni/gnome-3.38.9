@@ -28,7 +28,7 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=tracker-miners
 VERSION=${VERSION:-2.3.5}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -71,6 +71,13 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION.tar.?z
 cd $PRGNAM-$VERSION
+
+# Selection of patches from debian https://sources.debian.org/patches/tracker-miners/2.3.5-2.1/
+#patch -Np1 -i $CWD/Don-t-immediately-restart-tracker-extract-on-SIGSYS.patch || exit 1
+patch -Np1 -i $CWD/build-Fix-Dautostart-true.patch || exit 1
+patch -Np1 -i $CWD/dont_start_for_root.patch || exit 1
+patch -Np1 -i $CWD/functional-tests-Check-for-IPCT-image-tags-only-if-libipt.patch || exit 1
+
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -93,7 +100,8 @@ cd build
     -Dstrip=true \
     -Dgstreamer_backend=gupnp \
     -Dminer_rss=true \
-    -Dsystemd_user_services=no
+    -Dsystemd_user_services=/usr/lib/systemd/user \
+    -Dautostart=true
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install
 cd ..
