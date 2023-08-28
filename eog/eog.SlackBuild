@@ -90,7 +90,7 @@ meson setup .. \
  --infodir=/usr/info \
  --mandir=/usr/man \
  --localstatedir=/var \
- -Ddefault_library=shared \
+ -Ddefault_library=shared
 
 ninja $JOBS || ninja
 DESTDIR=$PKG ninja install
