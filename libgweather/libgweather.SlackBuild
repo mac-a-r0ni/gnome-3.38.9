@@ -96,9 +96,8 @@ cd build
     --sysconfdir=/etc \
     -Dstrip=true \
     -Dgtk_doc=false \
-    -Dtests=false \
-    -Dglade_catalog=true \
-    -Denable_vala=true
+    -Dglade_catalog=false \
+    -Denable_vala=false
 
   "${NINJA:=ninja}"
   DESTDIR=$PKG $NINJA install

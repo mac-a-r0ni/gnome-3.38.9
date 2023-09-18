@@ -22,12 +22,14 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://download.gnome.org/sources/gitg/41/gitg-41.tar.xz
+wget -c https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz
+#https://download.gnome.org/sources/gitg/3.32/gitg-3.32.1.tar.xz
+#https://download.gnome.org/sources/gitg/41/gitg-41.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=gitg
-VERSION=${VERSION:-41}
+VERSION=${VERSION:-44}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
@@ -58,6 +60,9 @@ elif [ "$ARCH" = "i686" ]; then
 elif [ "$ARCH" = "x86_64" ]; then
   SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
+elif [ "$ARCH" = "aarch64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
 else
   SLKCFLAGS="-O2"
   LIBDIRSUFFIX=""
@@ -83,7 +88,6 @@ cd meson-build
   CFLAGS="$SLKCFLAGS" \
   CXXFLAGS="$SLKCFLAGS" \
   meson setup .. \
-    --buildtype=release \
     --infodir=/usr/info \
     --libdir=/usr/lib${LIBDIRSUFFIX} \
     --localstatedir=/var \
