@@ -22,7 +22,7 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://gitlab.gnome.org/GNOME/aisleriot/-/archive/3.22.29/aisleriot-3.22.29.tar.gz
+wget -c https://gitlab.gnome.org/GNOME/aisleriot/-/archive/3.22.33/aisleriot-3.22.33.tar.gz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
@@ -80,6 +80,9 @@ find -L . \
   -o -perm 511 \) -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+PYVER=$(python3 -c 'import sys; print("%d.%d" % sys.version_info[:2])')
+export PYTHONPATH=/opt/python$PYVER/site-packages
 
 mkdir meson-build
 cd meson-build
