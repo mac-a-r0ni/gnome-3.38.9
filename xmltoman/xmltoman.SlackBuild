@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Copyright 2008-2012  David Somero (dsomero@hotmail.com) Athens, TN, USA
-# Copyright 2008, 2009, 2024  Patrick J. Volkerding, Sebeka, Minnesota, USA
+# Copyright 2024  Patrick J. Volkerding, Sebeka, Minnesota, USA
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -23,9 +22,9 @@
 
 cd $(dirname $0) ; CWD=$(pwd)
 
-PKGNAM=avahi
+PKGNAM=xmltoman
 VERSION=${VERSION:-$(echo $PKGNAM-*.tar.?z | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 
 # Automatically determine the architecture we're building on:
@@ -88,73 +87,11 @@ find . \
   \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
   -exec chmod 644 {} \+
 
-# Adjust for our netconfig, thanks to rworkman:
-cat $CWD/patches/fixup_avahi-dnsconfd.action.patch | patch -p1 --verbose || exit 1
+sed -i "s|prefix=/usr/local|prefix=/usr|g" Makefile
+sed -i "s|share/man|man|g" Makefile
 
-# Configure, build, and install:
-if [ ! -r configure ]; then
-  if [ -x ./autogen.sh ]; then
-    NOCONFIGURE=1 ./autogen.sh
-  else
-    autoreconf -vif
-  fi
-fi
-export PYTHON=python3
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
-./configure \
-  --prefix=/usr \
-  --libdir=/usr/lib${LIBDIRSUFFIX} \
-  --sysconfdir=/etc \
-  --localstatedir=/var \
-  --mandir=/usr/man \
-  --docdir=/usr/doc/$PKGNAM-$VERSION \
-  --with-systemdsystemunitdir=no \
-  --enable-tests \
-  --disable-static \
-  --disable-mono \
-  --disable-monodoc \
-  --disable-autoipd \
-  --disable-libsystemd \
-  --enable-compat-libdns_sd \
-  --enable-python-dbus \
-  --enable-glib \
-  --enable-dbus \
-  --enable-python \
-  --enable-gtk \
-  --enable-gtk3 \
-  --enable-qt5 \
-  --disable-qt4 \
-  --disable-qt3 \
-  --enable-core-docs \
-  --with-dbus-sys=/usr/share/dbus-1/system.d \
-  --with-avahi-user=avahi \
-  --with-avahi-group=avahi \
-  --with-avahi-priv-access-group=netdev \
-  --with-distro=slackware \
-  --program-prefix= \
-  --program-suffix= \
-  --build=$ARCH-slackware-linux || exit 1
 make $NUMJOBS || make || exit 1
 make install DESTDIR=$PKG || exit 1
-
-# 20220414 bkw: if this dir is empty, it doesn't need to be included
-# in the package.
-rmdir $PKG/run &> /dev/null || true
-
-# Install these files as .new:
-mv $PKG/etc/rc.d/rc.avahidaemon $PKG/etc/rc.d/rc.avahidaemon.new
-mv $PKG/etc/rc.d/rc.avahidnsconfd $PKG/etc/rc.d/rc.avahidnsconfd.new
-mv $PKG/etc/avahi/avahi-daemon.conf $PKG/etc/avahi/avahi-daemon.conf.new
-
-# Fix python3 shebangs:
-sed -i "s|#!python3|#!/usr/bin/python3|g" $PKG/usr/bin/avahi-{discover,bookmarks}
-
-# Don't ship .la files:
-rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
-
-# Strip binaries:
-find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null
 
 # Compress manual pages:
 find $PKG/usr/man -type f -exec gzip -9 {} \+
@@ -166,21 +103,18 @@ done
 # Add a documentation directory:
 mkdir -p $PKG/usr/doc/${PKGNAM}-$VERSION
 cp -a \
-  docs/* \
+  COPYING* ChangeLog LICENSE* README* \
   $PKG/usr/doc/${PKGNAM}-$VERSION
 
-# Useless (?)
-#rm -f $PKG/usr/doc/${PKGNAM}-$VERSION/INSTALL
-
-# Prevent overwrite:
-mv $PKG/usr/doc/${PKGNAM}-$VERSION/README $PKG/usr/doc/${PKGNAM}-$VERSION/README.too
-
-cp -a \
-  LICENSE* README* \
-  $PKG/usr/doc/${PKGNAM}-$VERSION
+# If there's a ChangeLog, installing at least part of the recent history
+# is useful, but don't let it get totally out of control:
+if [ -r ChangeLog ]; then
+  DOCSDIR=$(echo $PKG/usr/doc/${PKGNAM}-$VERSION)
+  cat ChangeLog | head -n 1000 > $DOCSDIR/ChangeLog
+  touch -r ChangeLog $DOCSDIR/ChangeLog
+fi
 
 mkdir -p $PKG/install
-zcat $CWD/doinst.sh.gz > $PKG/install/doinst.sh
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
