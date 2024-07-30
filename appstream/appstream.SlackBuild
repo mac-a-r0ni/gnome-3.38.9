@@ -22,13 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://www.freedesktop.org/software/appstream/releases/AppStream-0.16.3.tar.xz
+wget -c https://www.freedesktop.org/software/appstream/releases/AppStream-0.16.4.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 SRCNAM=AppStream
 PRGNAM=appstream
-VERSION=${VERSION:-0.16.3}
+VERSION=${VERSION:-0.16.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
@@ -82,6 +82,9 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+PYVER=$(python3 -c 'import sys; print("%d.%d" % sys.version_info[:2])')
+export PYTHONPATH=/opt/python$PYVER/site-packages
+
 mkdir -p build
 cd build
  CFLAGS="$SLKCFLAGS" \
@@ -96,6 +99,7 @@ cd build
     --sysconfdir=/etc \
     -Dvapi=true \
     -Dcompose=true \
+    -Dqt=true \
     -Dapidocs=false \
     -Dinstall-docs=false \
     -Dsystemd=false
