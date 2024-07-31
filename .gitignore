@@ -3,3 +3,4 @@ cheese/cheese-3.38.0.tar.xz
 gnome-boxes/gnome-boxes-3.38.2.tar.xz
 *.xz
 *.gz
+*.bz2
