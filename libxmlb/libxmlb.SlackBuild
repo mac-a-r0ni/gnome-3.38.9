@@ -22,12 +22,12 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://github.com/hughsie/libxmlb/releases/download/0.3.14/libxmlb-0.3.14.tar.xz
+wget -c https://github.com/hughsie/libxmlb/releases/download/0.3.19/libxmlb-0.3.19.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=libxmlb
-VERSION=${VERSION:-0.3.14}
+VERSION=${VERSION:-0.3.19}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 PKGTYPE=${PKGTYPE:-txz}
@@ -83,6 +83,9 @@ find -L . \
 
 mkdir -p meson-build
 cd meson-build
+
+PYVER=$(python3 -c 'import sys; print("%d.%d" % sys.version_info[:2])')
+export PYTHONPATH=/opt/python$PYVER/site-packages
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
