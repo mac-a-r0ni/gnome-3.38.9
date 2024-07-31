@@ -33,10 +33,10 @@
 # - update for v2.5.1
 # - various cleanups/changes in script, slack-desc, README
 
-wget -c https://libopenraw.freedesktop.org/download/exempi-2.6.3.tar.xz
+wget -c https://libopenraw.freedesktop.org/download/exempi-2.6.5.tar.xz
 
 PRGNAM=exempi
-VERSION=${VERSION:-2.6.3}
+VERSION=${VERSION:-2.6.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
 

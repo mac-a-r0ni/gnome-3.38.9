@@ -22,10 +22,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+wget -c https://releases.pagure.org/libosinfo/osinfo-db-20240701.tar.xz
+wget -c https://harrier.slackbuilds.org/misc/osinfo-db-slackware-20220214.tar.xz
+
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=osinfo-db
-VERSION=${VERSION:-20221018}
+VERSION=${VERSION:-20240701}
 SLVERSION=${SLVERSION:-20220214}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_gcs}
