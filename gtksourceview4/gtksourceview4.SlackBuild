@@ -26,7 +26,7 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wget -c https://download.gnome.org/core/3.38/3.38.9/sources/gtksourceview-4.8.1.tar.xz
+wget -c https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz
 
 PRGNAM=gtksourceview4
 SRCNAM=gtksourceview
