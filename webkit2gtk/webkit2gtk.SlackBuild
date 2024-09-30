@@ -23,7 +23,7 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #wget -c https://webkitgtk.org/releases/webkitgtk-2.36.8.tar.xz
-wget -c https://webkitgtk.org/releases/webkitgtk-2.44.2.tar.xz
+wget -c https://webkitgtk.org/releases/webkitgtk-2.46.0.tar.xz
 
 cd $(dirname $0) ; CWD=$(pwd)
 
@@ -108,6 +108,7 @@ cd build
 	-DENABLE_DOCUMENTATION=OFF \
         -DENABLE_BUBBLEWRAP_SANDBOX=ON \
         -DUSE_SYSTEM_MALLOC=ON \
+        -DUSE_SYSTEM_SYSPROF_CAPTURE=NO \
         -Wno-dev \
         -G Ninja \
         ..
